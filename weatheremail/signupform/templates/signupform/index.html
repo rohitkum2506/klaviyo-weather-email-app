@@ -1,0 +1,39 @@
+<head>
+<style>
+#wpe {
+	border: 1px solid #336633;
+	background: #f4b642;
+	color: #003300;
+	margin: auto;
+	width: 30%;
+	padding: 10px;
+	font-family: KaiTi,Sans Serif;
+}
+
+label, input, select {
+	width: 40%;
+	padding: 1px;
+}
+</style>
+</head>
+
+<body>
+<div id='wpe'>
+<h1 align='center'>Signup up to get Weather Upadate and much More from Klaviyo!</h1>
+<hr color = '#334632'>
+<form action="{% url 'confirm' %}" method="post" align='center'>
+{% csrf_token %}
+<label for="email_input">Email Address</label><br />
+<input type="email" name="email_input" value="" required /><br /><br />
+
+<label for="location_input">Location</label><br />
+<select name="location_input" required>
+	{% for loc_id, loc in location_set %}
+		<option value="{{ loc_id }}">{{ loc }}</option>
+	{% endfor %}
+</select><br /><br />
+
+<input type="submit" value="Subscribe" />
+</form>
+</div>
+</body>
