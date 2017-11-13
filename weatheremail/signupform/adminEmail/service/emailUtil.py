@@ -17,7 +17,7 @@ class emailUtility:
             self.email_server.starttls()
             self.email_server.ehlo()
             #I have created an email account to work for this account.
-            self.email_server.login('klaviyot@gmail.com', '*********')  # app-specific verification code
+            self.email_server.login('klaviyot@gmail.com', 'klaviyoklaviyo')  # app-specific verification code
         except SMTPException as se:
             print('Unable to set up smtp connection, due to:\n' + str(se))
             self.email_server.close()
