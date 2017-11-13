@@ -69,7 +69,7 @@ class Command(BaseCommand):
 
 	#send email function. It fetches the wetaher information, creates the body of email message and sends it the user.
 	def send_email(self, subscriptions):
-		sender = 'kumar.ro@husky.neu.com'
+		sender = 'klaviyot@gmail.com'
 		email_dict = {}
 		is_day = datetime.now().time().hour in range(8, 20)
 		almanac_temp = 'temp_high' if is_day else 'temp_low'
