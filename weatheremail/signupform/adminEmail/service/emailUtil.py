@@ -29,16 +29,19 @@ class emailUtility:
     def get_email_header(self, sender, from_user, subject):
         return MIMEMultipart()
 
+    #helper method to attach text to the email message
     def attach_text(self, message, form, image):
         message.attach(MIMEText(form + image, 'html'))
         return message
 
+    # helper method to attach image to the email message
     def attach_image(self, m, image_index):
         image = MIMEImage(open(self.image_fn % image_index, 'rb').read())
         image.add_header('Content-ID', '<weather>')
         m.attach(image)
         return m
 
+    #helper method to send the email using smtp client
     def send_email_to(self, sender, email_dict):
         for e in email_dict.keys():
             try:
