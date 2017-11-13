@@ -1,6 +1,13 @@
 <head>
 <style>
-#wpe {
+
+{% load static %}
+body {
+	background-image : url('{% static 'back4.jpeg' %}');
+	background-repeat:no-repeat;
+	background-size:100%;
+}
+#weather-update {
 	border: 1px solid #336633;
 	background: #f4b642;
 	color: #003300;
@@ -8,6 +15,11 @@
 	width: 30%;
 	padding: 10px;
 	font-family: KaiTi,Sans Serif;
+}
+
+#submit {
+	margin-top:10px;
+	width:15%;
 }
 
 label, input, select {
@@ -18,8 +30,8 @@ label, input, select {
 </head>
 
 <body>
-<div id='wpe'>
-<h1 align='center'>Signup up to get Weather Upadate and much More from Klaviyo!</h1>
+<div id='weather-update'>
+<h1 align='center'>Signup up to get weather update and much More from Klaviyo!</h1>
 <hr color = '#334632'>
 <form action="{% url 'confirm' %}" method="post" align='center'>
 {% csrf_token %}
@@ -33,7 +45,7 @@ label, input, select {
 	{% endfor %}
 </select><br /><br />
 
-<input type="submit" value="Subscribe" />
+<input type="submit" id="submit" value="Subscribe" />
 </form>
 </div>
 </body>

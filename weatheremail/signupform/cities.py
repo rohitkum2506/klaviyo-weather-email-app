@@ -1,5 +1,4 @@
 cities = [
-    ('AK/Anchorage', 'Anchorage'),
     ('AZ/Phoenix', 'Phoenix'),
     ('AZ/Tucson', 'Tucson'),
     ('AZ/Mesa', 'Mesa'),
